@@ -10,12 +10,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "TurboLabIt\\Foreachable\\": "src/"
+            "TurboLabIt\\Encryptor\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "TurboLabIt\\Foreachable\\tests\\": "tests/"
+            "TurboLabIt\\Encryptor\\tests\\": "tests/"
         }
     },
     "require": {
