@@ -49,6 +49,6 @@ class Property
         return $this->encryptor->decrypt($text);
     }
 }
-```
+````
 
 See: [Usage](https://github.com/TurboLabIt/php-encryptor/blob/main/tests/EncryptorTest.php)
