@@ -1,0 +1,27 @@
+{
+    "name": "turbolabit/php-encryptor",
+    "description": "The easiest tool to encrypt/decrypt strings and arrays in PHP",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zane",
+            "email": "info@turbolab.it"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "TurboLabIt\\Foreachable\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TurboLabIt\\Foreachable\\tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=7.4 || >=8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
