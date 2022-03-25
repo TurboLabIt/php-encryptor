@@ -52,3 +52,13 @@ class Property
 ````
 
 See: [Usage](https://github.com/TurboLabIt/php-encryptor/blob/main/tests/EncryptorTest.php)
+
+
+## 🧪 Test it
+
+````bash
+git clone git@github.com:TurboLabIt/php-encryptor.git
+cd php-encryptor
+clear && bash script/test_runner.sh
+
+````
