@@ -25,11 +25,11 @@ class Encryptor
     }
 
 
-    public function encrypt($data): string
+    public function encrypt($data) : string
     {
         $this->preventLeaks();
 
-        if(empty($data)) {
+        if( empty($data) ) {
             return '';
         }
 
@@ -63,7 +63,7 @@ class Encryptor
     {
         $this->preventLeaks();
 
-        if(empty($encodedEncryptedString)) {
+        if( empty($encodedEncryptedString) ) {
             return $encodedEncryptedString;
         }
 
