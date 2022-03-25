@@ -2,15 +2,16 @@
 namespace TurboLabIt\Encryptor\tests;
 
 use PHPUnit\Framework\TestCase;
+use TurboLabIt\Encryptor\Encryptor;
 
 
-class ForeachableTest extends TestCase
+class EncryptorTest extends TestCase
 {
     const FAKE_APP_SECRET = 'secret-from-symfony-env';
     const TEXT_TO_ENCODE = 'T%is is /-\ SECRùT';
-    
-    
- protected function testCreateInstance()
+
+
+    protected function testCreateInstance()
     {
         $encryptor = new Encryptor(static::FAKE_APP_SECRET);
         $this->assertNotEmpty($encryptor);
