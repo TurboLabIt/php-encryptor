@@ -1,0 +1,4 @@
+services:
+  TurboLabIt\Encryptor\Encryptor:
+    arguments:
+      $secretKey: '%env(APP_SECRET)%'
