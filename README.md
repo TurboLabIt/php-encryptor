@@ -55,7 +55,10 @@ See: [Usage](https://github.com/TurboLabIt/php-encryptor/blob/main/tests/Encrypt
 TurboLabIt\Encryptor\Encryptor:
   arguments:
     $secretKey: '%env(APP_SECRET)%'
+
 ````
+
+See: [services.yaml](https://github.com/TurboLabIt/php-encryptor/blob/main/src/Resources/config/services.yaml)
 
 
 ## 🧪 Test it
