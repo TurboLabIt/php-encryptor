@@ -2,7 +2,7 @@
 The easiest tool to encrypt/decrypt strings and arrays in PHP
 
 
-## 📦 Install it with composer
+## 📦 1. Install it with composer
 
 ````bash
 composer config repositories.TurboLabIt/php-encryptor git https://github.com/TurboLabIt/php-encryptor.git
@@ -10,7 +10,7 @@ composer require turbolabit/php-encryptor:dev-main
 
 ````
 
-## 🔁 Symfony usage
+## 🔁 2. Symfony usage
 
 ````php
 <?php
@@ -48,7 +48,7 @@ class Property
 See: [Usage](https://github.com/TurboLabIt/php-encryptor/blob/main/tests/EncryptorTest.php)
 
 
-## ⚙️ Symfony custom configuration (optional)
+## 3. ⚙️ Symfony custom configuration (optional)
 
 ````yaml
 # config/services.yaml
