@@ -12,13 +12,6 @@ composer require turbolabit/php-encryptor:dev-main
 
 ## 🔁 Symfony usage
 
-````yaml
-# config/services.yaml
-TurboLabIt\Encryptor\Encryptor:
-  arguments:
-    $secretKey: '%env(APP_SECRET)%'
-````
-
 ````php
 <?php
 use TurboLabIt\Encryptor\Encryptor;
@@ -53,6 +46,16 @@ class Property
 ````
 
 See: [Usage](https://github.com/TurboLabIt/php-encryptor/blob/main/tests/EncryptorTest.php)
+
+
+## ⚙️ Symfony custom configuration (optional)
+
+````yaml
+# config/services.yaml
+TurboLabIt\Encryptor\Encryptor:
+  arguments:
+    $secretKey: '%env(APP_SECRET)%'
+````
 
 
 ## 🧪 Test it
