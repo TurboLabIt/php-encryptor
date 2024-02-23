@@ -1,4 +1,6 @@
 services:
-  TurboLabIt\Encryptor\Encryptor:
-    arguments:
-      $secretKey: '%env(APP_SECRET)%'
+    TurboLabIt\Encryptor\Encryptor:
+        autowire: true
+        public: true
+        arguments:
+            $secretKey: '%env(APP_SECRET)%'
