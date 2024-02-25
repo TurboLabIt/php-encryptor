@@ -1,7 +1,7 @@
-### webdev-gitignore by https://github.com/ZaneCEO/webdev-gitignore/ ###
+### webdev-gitignore by https://github.com/TurboLabIt/webdev-gitignore/ ###
 ########################################################################
 #
-# curl -o .gitignore https://raw.githubusercontent.com/ZaneCEO/webdev-gitignore/master/.gitignore?$(date +%s)
+# curl -o .gitignore https://raw.githubusercontent.com/TurboLabIt/webdev-gitignore/master/.gitignore?$(date +%s)
 
 # IDEs #
 ########
@@ -23,6 +23,7 @@ nbproject
 # SVN #
 #######
 .svn
+
 
 # composer #
 ############
@@ -48,19 +49,17 @@ desktop.ini
 ##########
 *.lnk
 
+
 # Let's Encrypt #
 #################
 .well-known/
+
 
 # Node.js #
 ###########
 node_modules/
 npm-debug.log
-package-lock.json
 .sass-cache/
-
-# Bower #
-#########
 bower_components/
 
 
@@ -69,14 +68,30 @@ bower_components/
 *.rej
 
 
-## Static files
-/resources/revision.txt
-/resources/static_files/*
+## Autodeploy ##
+################
+public/autodeploy.php
+public/autodeploy-async.php
+public/async-runner-request.php
 
 
-##
-/public/autodeploy.php
-/wordpress/
+## Webdriver ##
+################
+drivers/chromedriver
+drivers/geckodriver
+
+
+## Sitemap ##
+#############
+/public/sitemap/
+/public/sitemap_new/
+
+
+## Environment ##
+#################
+# https://github.com/TurboLabIt/bash-fx/blob/main/scripts/app-env.sh
+/env
+
 
 ###> symfony/framework-bundle ###
 /.env.local
@@ -95,6 +110,4 @@ bower_components/
 ###< symfony/phpunit-bridge ###
 
 
-## Sitemap
-/public/sitemap/
-/public/sitemap_new/
+/wordpress/

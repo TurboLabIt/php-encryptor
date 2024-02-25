@@ -1,18 +1,16 @@
 <?php
-/**
- * @see https://github.com/TurboLabIt/php-encryptor/
- */
 namespace TurboLabIt\Encryptor;
+
 
 class Encryptor
 {
-    const KEY_HASHING_ALGO  = "sha512";
-    const ENCRYPT_ALGO      = "AES256";
+    const string KEY_HASHING_ALGO   = "sha512";
+    const string ENCRYPT_ALGO       = "AES256";
 
     protected string $secretKey;
     protected int $iv_num_bytes;
 
-    protected $specialCharMap = [
+    protected array $specialCharMap = [
         "/"     => "__ssym1__",
         "\\"    => "__ssym2__",
     ];

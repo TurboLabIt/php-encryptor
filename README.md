@@ -1,11 +1,11 @@
 # php-encryptor
-The easiest tool to encrypt/decrypt strings and arrays in PHP
+A single, zero-config service with encrypt() and decrypt() methods to safely share or expose confidential data
 
 
 ## 📦 1. Install it with composer
 
 ````bash
-composer require turbolabit/php-encryptor:dev-main
+symfony composer require turbolabit/php-encryptor:dev-main
 
 ````
 
@@ -15,15 +15,13 @@ composer require turbolabit/php-encryptor:dev-main
 <?php
 use TurboLabIt\Encryptor\Encryptor;
 
+
 class Property
 {
-    protected Encryptor $encryptor;
     protected string $bookingToken = '12345678';
     
-    public function __construct(Encryptor $encryptor)
-    {
-        $this->encryptor = $encryptor;
-    }
+    public function __construct(protected Encryptor $encryptor)
+    {}
     
     
     public function getBookingData() : string
@@ -44,7 +42,7 @@ class Property
 }
 ````
 
-See: [Usage](https://github.com/TurboLabIt/php-encryptor/blob/main/tests/EncryptorTest.php)
+See: [Usage](https://github.com/TurboLabIt/php-encryptor/blob/main/tests/BundleTest.php)
 
 
 ## 3. ⚙️ Symfony custom configuration (optional)
@@ -57,7 +55,7 @@ TurboLabIt\Encryptor\Encryptor:
 
 ````
 
-See: [services.yaml](https://github.com/TurboLabIt/php-encryptor/blob/main/src/Resources/config/services.yaml)
+See: [services.yaml](https://github.com/TurboLabIt/php-encryptor/blob/main/config/services.yaml)
 
 
 ## 🧪 Test it
@@ -65,6 +63,6 @@ See: [services.yaml](https://github.com/TurboLabIt/php-encryptor/blob/main/src/R
 ````bash
 git clone git@github.com:TurboLabIt/php-encryptor.git
 cd php-encryptor
-clear && bash script/test_runner.sh
+bash script/symfony-bundle-tester.sh
 
 ````
