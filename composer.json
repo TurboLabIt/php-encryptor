@@ -2,7 +2,7 @@
   "name": "turbolabit/php-encryptor",
   "description": "A single, zero-config service with encrypt() and decrypt() methods to safely share or expose confidential data",
   "type": "symfony-bundle",
-  "license": "CC BY-SA 4.0",
+  "license": "CC-BY-4.0",
   "authors": [
     {
       "name": "Zane",
