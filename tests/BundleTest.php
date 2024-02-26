@@ -8,8 +8,8 @@ use TurboLabIt\Encryptor\Encryptor;
 
 class BundleTest extends KernelTestCase
 {
-    const string FAKE_APP_SECRET    = 'secret-from-symfony-env';
-    const string TEXT_TO_ENCODE     = 'T%is is /-\ SECRùT';
+    const FAKE_APP_SECRET   = 'secret-from-symfony-env';
+    const TEXT_TO_ENCODE    = 'T%is is /-\ SECRùT';
 
 
     protected function getInstance() : Encryptor

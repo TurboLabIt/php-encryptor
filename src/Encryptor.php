@@ -4,8 +4,8 @@ namespace TurboLabIt\Encryptor;
 
 class Encryptor
 {
-    const string KEY_HASHING_ALGO   = "sha512";
-    const string ENCRYPT_ALGO       = "AES256";
+    const KEY_HASHING_ALGO  = "sha512";
+    const ENCRYPT_ALGO      = "AES256";
 
     protected string $secretKey;
     protected int $iv_num_bytes;
@@ -97,7 +97,7 @@ class Encryptor
     }
 
 
-    protected function preventLeaks()
+    protected function preventLeaks() : void
     {
         if( empty($this->secretKey) || empty($this->iv_num_bytes) ) {
             throw new EncryptionException();
