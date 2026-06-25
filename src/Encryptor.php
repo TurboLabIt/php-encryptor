@@ -12,6 +12,7 @@ class Encryptor
 
     const LEGACY_KEY_HASHING_ALGO   = "sha512";
     const LEGACY_ENCRYPT_ALGO       = "AES256";
+    const LEGACY_IV_NUM_BYTES       = 16;           // AES-256-CBC IV = block size
 
     protected string $sodiumKey;
     protected string $legacyKey;
@@ -32,9 +33,10 @@ class Encryptor
         // 32-byte secretbox key, derived from the provided secret (BLAKE2b)
         $this->sodiumKey = sodium_crypto_generichash($secretKey, '', SODIUM_CRYPTO_SECRETBOX_KEYBYTES);
 
-        // legacy AES-256-CBC key material (decrypt-only)
-        $this->legacyKey        = openssl_digest($secretKey, static::LEGACY_KEY_HASHING_ALGO, true);
-        $this->legacyIvNumBytes = openssl_cipher_iv_length(static::LEGACY_ENCRYPT_ALGO);
+        // legacy AES-256-CBC key material (decrypt-only). Core hash()/constant are used here so the
+        // constructor needs no ext-openssl — that's only required for openssl_decrypt() in decryptLegacy().
+        $this->legacyKey        = hash(static::LEGACY_KEY_HASHING_ALGO, $secretKey, true);
+        $this->legacyIvNumBytes = static::LEGACY_IV_NUM_BYTES;
     }
 
 
@@ -151,6 +153,10 @@ class Encryptor
 
     protected function decryptLegacy(string $encoded, bool $unserialize)
     {
+        if( !function_exists('openssl_decrypt') ) {
+            throw new EncryptionException("decrypt() failure: ext-openssl is required to read legacy ciphertexts");
+        }
+
         $encoded            = str_ireplace($this->specialCharMap, array_keys($this->specialCharMap), $encoded);
         $encryptedString    = base64_decode($encoded);
 

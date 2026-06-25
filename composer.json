@@ -11,7 +11,10 @@
   ],
   "require": {
     "php": "^8.2",
-    "ext-openssl": "*"
+    "ext-sodium": "*"
+  },
+  "suggest": {
+    "ext-openssl": "Only to decrypt legacy (pre-v2) AES-256-CBC ciphertexts"
   },
   "autoload": {
     "psr-4": {
